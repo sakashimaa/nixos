@@ -1,0 +1,58 @@
+{ pkgs, zen-browser, ... }:
+{
+  environment.systemPackages =
+    (with pkgs; [
+      vim
+      git
+      sing-box
+      wofi
+      bibata-cursors
+      foot
+      fish
+      fastfetch
+      starship
+      gcc
+      clang
+      neovim
+      eza
+      bat
+      lua-language-server
+      ripgrep
+      rustc
+      cargo
+      clippy
+      rustfmt
+      rust-analyzer
+      bibata-cursors
+      hyprcursor
+      grimblast
+      rofi
+      neovide
+      hyprpaper
+      killall
+      file
+      vscode-langservers-extracted
+      spotify-player
+      blueman
+      pavucontrol
+      libsForQt5.pulseaudio-qt
+      libldac-dec
+      nil
+      nixfmt-rfc-style
+      playerctl
+      cava
+      wttrbar
+      hyprlock
+      hypridle
+      bash
+      mako
+      libnotify
+      glib
+      typescript
+      typescript-language-server
+      waybar
+    ])
+    ++ [
+      zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
+}

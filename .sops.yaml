@@ -1,0 +1,7 @@
+keys:
+  - &yoko age1j6mcrlqv35chta5snn5j9pzzdz4nc2059xvqy9c9lw9n2nammsls48y98r
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+      - age:
+          - *yoko
