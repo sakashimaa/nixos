@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+
   system.activationScripts.gitBackup = ''
     export PATH=${pkgs.openssh}/bin:$PATH
     export HOME=/root
@@ -34,6 +35,7 @@
   programs.hyprland.enable = true;
   programs.yazi.enable = true;
   programs.direnv.enable = true;
+  programs.niri.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
