@@ -11,7 +11,6 @@
     ${pkgs.git}/bin/git push -u origin main >> /tmp/nixos-backup.log 2>&1 || true
   '';
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
