@@ -6,7 +6,7 @@
     ${pkgs.git}/bin/git config user.name "yokko" && \
     ${pkgs.git}/bin/git add -A && \
     ${pkgs.git}/bin/git commit -m "auto: $(date)" && \
-    ${pkgs.git}/bin/git push -u origin main || true
+    ${pkgs.git}/bin/git push -u origin main >> /tmp/nixos-backup.log 2>&1 || true
   '';
 
   # Bootloader.
