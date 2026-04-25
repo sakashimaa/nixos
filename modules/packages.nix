@@ -61,6 +61,7 @@
       grim
       slurp
       wl-clipboard
+      obsidian
     ])
     ++ [
       zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
