@@ -9,6 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     walker.url = "github:abenz1267/walker";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -17,12 +21,13 @@
       sops-nix,
       zen-browser,
       walker,
+      noctalia,
       ...
     }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit zen-browser walker; };
+        specialArgs = { inherit zen-browser walker noctalia; };
         modules = [
           ./configuration.nix
           sops-nix.nixosModules.sops

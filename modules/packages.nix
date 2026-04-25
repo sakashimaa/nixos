@@ -1,4 +1,9 @@
-{ pkgs, zen-browser, ... }:
+{
+  pkgs,
+  zen-browser,
+  noctalia,
+  ...
+}:
 {
   environment.systemPackages =
     (with pkgs; [
@@ -54,5 +59,6 @@
     ])
     ++ [
       zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+      noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 }
