@@ -12,5 +12,11 @@
     ./modules/system.nix
     ./modules/user.nix
     ./modules/sops.nix
+    ./modules/wallpaper.nix
   ];
+
+  services.wallpaper = {
+    enable = true;
+    path = "/home/yoko/wallpapers/nix-chan.png";
+  };
 }
