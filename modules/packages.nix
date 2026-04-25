@@ -57,6 +57,7 @@
       waybar
       brave
       matugen
+      alacritty
     ])
     ++ [
       zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
