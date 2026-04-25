@@ -12,6 +12,11 @@
     ${pkgs.git}/bin/git push -u origin main >> /tmp/nixos-backup.log 2>&1 || true
   '';
 
+  environment.sessionVariables = {
+    XCURSOR_THEME = "catppuccin-mocha-dark-cursors";
+    XCURSOR_SIZE = "24";
+  };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
