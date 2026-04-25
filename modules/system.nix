@@ -1,5 +1,14 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  system.activationScripts.gitBackup = ''
+    cd /etc/nixos && \
+    ${pkgs.git}/bin/git config user.email "yokko@nixos" && \
+    ${pkgs.git}/bin/git config user.name "yokko" && \
+    ${pkgs.git}/bin/git add -A && \
+    ${pkgs.git}/bin/git commit -m "auto: $(date)" && \
+    ${pkgs.git}/bin/git push -u origin main || true
+  '';
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -27,6 +36,7 @@
 
   programs.hyprland.enable = true;
   programs.yazi.enable = true;
+  programs.direnv.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

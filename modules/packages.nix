@@ -3,7 +3,6 @@
   environment.systemPackages =
     (with pkgs; [
       vim
-      git
       sing-box
       wofi
       bibata-cursors
@@ -51,6 +50,7 @@
       typescript
       typescript-language-server
       waybar
+      brave
     ])
     ++ [
       zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
