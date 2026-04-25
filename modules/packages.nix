@@ -58,6 +58,9 @@
       brave
       matugen
       alacritty
+      grim
+      slurp
+      wl-clipboard
     ])
     ++ [
       zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
