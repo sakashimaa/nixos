@@ -56,6 +56,7 @@
       typescript-language-server
       waybar
       brave
+      matugen
     ])
     ++ [
       zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
