@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   system.activationScripts.gitBackup = ''
+    export PATH=${pkgs.openssh}/bin:$PATH
+    export HOME=/root
     cd /etc/nixos && \
     ${pkgs.git}/bin/git config user.email "yokko@nixos" && \
     ${pkgs.git}/bin/git config user.name "yokko" && \
