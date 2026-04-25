@@ -62,6 +62,7 @@
       slurp
       wl-clipboard
       obsidian
+      catppuccin-cursors.mochaDark
     ])
     ++ [
       zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
