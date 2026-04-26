@@ -14,12 +14,10 @@
   system.activationScripts.gitBackup = ''
     export PATH=${pkgs.openssh}/bin:$PATH
     export HOME=/root
-    cd /etc/nixos && \
-    ${pkgs.git}/bin/git config user.email "yokko@nixos" && \
-    ${pkgs.git}/bin/git config user.name "yokko" && \
-    ${pkgs.git}/bin/git add -A && \
-    ${pkgs.git}/bin/git commit -m "auto: $(date)" && \
-    ${pkgs.git}/bin/git push -u origin main >> /tmp/nixos-backup.log 2>&1 || true
+    ${pkgs.git}/bin/git config --global --add safe.directory /etc/nixos
+    ${pkgs.git}/bin/git -C /etc/nixos add -A
+    ${pkgs.git}/bin/git -C /etc/nixos commit -m "auto: $(date)" || true
+    ${pkgs.git}/bin/git -C /etc/nixos push -u origin main || true
   '';
 
   environment.sessionVariables = {
