@@ -1,5 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, niri, ... }:
 {
+  security.pam.services.hyprlock = { };
+
+  nixpkgs.overlays = [
+    niri.overlays.niri
+  ];
+
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-unstable;
+  };
 
   system.activationScripts.gitBackup = ''
     export PATH=${pkgs.openssh}/bin:$PATH
@@ -40,7 +50,6 @@
   programs.hyprland.enable = true;
   programs.yazi.enable = true;
   programs.direnv.enable = true;
-  programs.niri.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 

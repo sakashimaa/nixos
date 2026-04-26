@@ -1,6 +1,5 @@
 {
   pkgs,
-  zen-browser,
   noctalia,
   ...
 }:
@@ -65,7 +64,6 @@
       catppuccin-cursors.mochaDark
     ])
     ++ [
-      zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 }
