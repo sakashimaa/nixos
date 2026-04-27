@@ -63,6 +63,7 @@
       obsidian
       catppuccin-cursors.mochaDark
       claude-code
+      ayugram-desktop
     ])
     ++ [
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
