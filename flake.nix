@@ -39,6 +39,12 @@
 
             home-manager.users.yoko = import ./home.nix;
           }
+          (
+            { pkgs, modulesPath, ... }:
+            {
+              imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix") ];
+            }
+          )
         ];
       };
     };
