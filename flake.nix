@@ -13,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = "github:sodiboo/niri-flake";
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
   outputs =
@@ -21,6 +22,7 @@
       sops-nix,
       niri,
       noctalia,
+      claude-code,
       home-manager,
       ...
     }:
@@ -29,9 +31,14 @@
         system = "x86_64-linux";
         specialArgs = { inherit noctalia niri; };
         modules = [
+          {
+            nixpkgs.overlays = [ claude-code.overlays.default ];
+          }
+
           ./configuration.nix
           sops-nix.nixosModules.sops
           niri.nixosModules.niri
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

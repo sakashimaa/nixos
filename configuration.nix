@@ -1,4 +1,5 @@
 {
+  lib,
   ...
 }:
 {
@@ -14,6 +15,12 @@
     ./modules/sops.nix
     ./modules/wallpaper.nix
   ];
+
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "claude-code"
+    ];
 
   services.wallpaper = {
     enable = true;

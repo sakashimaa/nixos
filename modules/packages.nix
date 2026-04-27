@@ -62,6 +62,7 @@
       wl-clipboard
       obsidian
       catppuccin-cursors.mochaDark
+      claude-code
     ])
     ++ [
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
