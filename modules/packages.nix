@@ -64,6 +64,7 @@
       catppuccin-cursors.mochaDark
       claude-code
       ayugram-desktop
+      lazygit
     ])
     ++ [
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
