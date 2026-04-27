@@ -74,8 +74,6 @@ vim.lsp.config("vue_ls", {
 })
 vim.lsp.enable "vue_ls"
 
-vim.lsp.enable "tailwindcss"
-
 vim.lsp.config("rust_analyzer", {
   capabilities = require("cmp_nvim_lsp").default_capabilities(),
   settings = {
