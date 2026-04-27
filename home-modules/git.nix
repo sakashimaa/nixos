@@ -5,8 +5,11 @@
   };
 
   programs.git.settings = {
+    user = {
+      email = "yokkoshima@icloud.com";
+      name = "yoko";
+    };
     init.defaultBranch = "main";
-    user.name = "yoko";
-    user.email = "yokkoshima@icloud.com";
+    credential.helper = "store";
   };
 }
