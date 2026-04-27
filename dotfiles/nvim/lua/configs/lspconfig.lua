@@ -74,8 +74,9 @@ vim.lsp.config("vue_ls", {
 })
 vim.lsp.enable "vue_ls"
 
+vim.lsp.enable "tailwindcss"
+
 vim.lsp.config("rust_analyzer", {
-  cmd = { "rust-analyzer" },
   capabilities = require("cmp_nvim_lsp").default_capabilities(),
   settings = {
     ["rust-analyzer"] = {
@@ -92,13 +93,3 @@ vim.lsp.config("rust_analyzer", {
   },
 })
 vim.lsp.enable "rust_analyzer"
-
-vim.lsp.config("nil_ls", {
-  cmd = { "nil" },
-  settings = {
-    ["nil"] = {
-      formatting = { command = { "nixfmt" } },
-    },
-  },
-})
-vim.lsp.enable "nil_ls"

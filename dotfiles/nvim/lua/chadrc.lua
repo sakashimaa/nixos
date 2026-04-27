@@ -2,11 +2,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "gruvbox",
-}
-
-M.ui = {
-  transparency = true,
+  theme = "rosepine",
 }
 
 M.nvdash = {
@@ -23,16 +19,15 @@ M.nvdash = {
   },
 
   buttons = {
-
-    { txt = "  Find File", keys = "ff", cmd = "Telescope find_files" },
-    { txt = "  Recent Files", keys = "fo", cmd = "Telescope oldfiles" },
+    { txt = "  Find File", keys = "ff", cmd = "Telescope find_files" },
+    { txt = "  Recent Files", keys = "fo", cmd = "Telescope oldfiles" },
     { txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep" },
-    { txt = "  Restore Session", keys = "sr", cmd = "SessionRestore" },
+    { txt = "  Restore Session", keys = "sr", cmd = "lua require('persistence').load()" },
+    { txt = "  Projects", keys = "fp", cmd = "Telescope projects" },
     { txt = "󱥚  Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()" },
-    { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
+    { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
 
     { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
-
     {
       txt = function()
         local stats = require("lazy").stats()
@@ -41,9 +36,7 @@ M.nvdash = {
       end,
       hl = "NvDashFooter",
       no_gap = true,
-      content = "fit",
     },
-
     { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
   },
 }
