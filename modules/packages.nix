@@ -66,6 +66,7 @@
       ayugram-desktop
       lazygit
       nautilus
+      jetbrains.datagrip
     ])
     ++ [
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
