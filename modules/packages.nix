@@ -65,6 +65,7 @@
       claude-code
       ayugram-desktop
       lazygit
+      nautilus
     ])
     ++ [
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
