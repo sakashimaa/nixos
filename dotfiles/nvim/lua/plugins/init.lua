@@ -108,7 +108,7 @@ return {
       },
     },
     keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
       { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
     },
   },
@@ -132,9 +132,9 @@ return {
       enhanced_diff_hl = true,
       view = {
         merge_tool = {
-          layout = "diff3_mixed",  -- 3 panels top (LOCAL/BASE/REMOTE) + MERGED bottom
+          layout = "diff3_mixed", -- 3 panels top (LOCAL/BASE/REMOTE) + MERGED bottom
           disable_diagnostics = true,
-          winbar_info = true,      -- show LOCAL/BASE/REMOTE labels
+          winbar_info = true,     -- show LOCAL/BASE/REMOTE labels
         },
       },
       file_panel = {
@@ -177,8 +177,6 @@ return {
   ---------------------------------------------------------------------------
   -- NEW: UI upgrades
   ---------------------------------------------------------------------------
-
-  -- Noice — beautiful cmdline, messages, popups
   {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -187,26 +185,16 @@ return {
       "rcarriga/nvim-notify",
     },
     opts = {
-      cmdline = {
-        view = "cmdline_popup",
-        format = {
-          cmdline = { icon = " " },
-          search_down = { icon = " ⌄" },
-          search_up = { icon = " ⌃" },
-          filter = { icon = " " },
-          lua = { icon = " " },
-          help = { icon = "󰋖 " },
+      lsp = {
+        override = {},
+        hover = { enabled = false },
+        signature = { enabled = false },
+        documentation = {
+          enabled = false,
         },
       },
-      messages = { view_search = false },
-      lsp = {
-        override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
-        },
-        hover = { enabled = true },
-        signature = { enabled = true },
+      cmdline = {
+        view = "cmdline_popup",
       },
       presets = {
         bottom_search = false,
@@ -215,14 +203,11 @@ return {
         lsp_doc_border = true,
       },
       routes = {
-        -- skip "written" messages
         { filter = { event = "msg_show", kind = "", find = "written" }, opts = { skip = true } },
-        -- skip search count messages
-        { filter = { event = "msg_show", kind = "search_count" }, opts = { skip = true } },
+        { filter = { event = "msg_show", kind = "search_count" },       opts = { skip = true } },
       },
     },
   },
-
   -- Notify — pretty notifications
   {
     "rcarriga/nvim-notify",
@@ -372,9 +357,9 @@ return {
     event = "BufReadPre",
     opts = {},
     keys = {
-      { "<leader>sr", function() require("persistence").load() end, desc = "Restore session" },
+      { "<leader>sr", function() require("persistence").load() end,               desc = "Restore session" },
       { "<leader>sl", function() require("persistence").load { last = true } end, desc = "Last session" },
-      { "<leader>sd", function() require("persistence").stop() end, desc = "Stop session tracking" },
+      { "<leader>sd", function() require("persistence").stop() end,               desc = "Stop session tracking" },
     },
   },
 
@@ -400,5 +385,12 @@ return {
       },
     },
   },
-
+  {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      window = {
+        documentation = false,
+      },
+    },
+  },
 }

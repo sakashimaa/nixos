@@ -91,3 +91,5 @@ vim.lsp.config("rust_analyzer", {
   },
 })
 vim.lsp.enable "rust_analyzer"
+
+vim.lsp.handlers["textDocument/signatureHelp"] = function() end

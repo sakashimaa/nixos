@@ -76,3 +76,8 @@ if vim.g.neovide then
   -- вставка через Ctrl+Shift+V
   vim.keymap.set({ "n", "i", "c" }, "<C-S-v>", "<C-r>+")
 end
+
+vim.defer_fn(function()
+  pcall(vim.api.nvim_clear_autocmds, { group = "noice_lsp_signature" })
+  pcall(vim.api.nvim_clear_autocmds, { group = "LspSignature" })
+end, 500)
