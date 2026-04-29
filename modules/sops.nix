@@ -71,7 +71,7 @@
               "vless-reality"
               "hy2"
             ];
-            default = "hy2";
+            default = "auto";
           }
           {
             type = "urltest";
