@@ -71,7 +71,7 @@
               "vless-reality"
               "hy2"
             ];
-            default = "auto";
+            default = "vless-reality";
           }
           {
             type = "urltest";
@@ -87,20 +87,20 @@
           {
             type = "vless";
             tag = "vless-reality";
-            server = "89.124.76.238";
+            server = "195.63.137.98";
             server_port = 443;
-            uuid = "27acc49a-1fd5-4bb1-b164-77c2416293bc";
+            uuid = "63468d49-5aac-41b0-9eea-e1e7ccc7f8ee";
             flow = "xtls-rprx-vision";
             tls = {
               enabled = true;
-              server_name = "www.microsoft.com";
+              server_name = "gateway.icloud.com";
               utls = {
                 enabled = true;
                 fingerprint = "chrome";
               };
               reality = {
                 enabled = true;
-                public_key = config.sops.placeholder.reality_public;
+                public_key = "kDYojkUKiFusSWJSNk9JCkHUfv7CUqjRXlC_9J5s4Q4";
                 short_id = "fe";
               };
             };
