@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [
@@ -14,6 +14,29 @@
     ./home-modules/lock.nix
     ./home-modules/theme.nix
   ];
+
+  sops = {
+    age.keyFile = "/home/yoko/.config/sops/age/keys.txt";
+
+    defaultSopsFile = ./secrets.yaml;
+    defaultSymlinkPath = "/run/user/1000/secrets";
+    defaultSecretsMountPoint = "/run/user/1000/secrets.d";
+
+    secrets.claude_api_key = {
+      path = "${config.sops.defaultSymlinkPath}/claude_api_key";
+    };
+  };
+
+  home.sessionVariables = {
+    ANTHROPIC_AUTH_TOKEN=config.sops.secrets.claude_api_key.path;
+    ANTHROPIC_BASE_URL="http://185.193.127.242/anthropic";
+    ANTHROPIC_MODEL="claude-opus-latest";
+    ANTHROPIC_DEFAULT_OPUS_MODEL="claude-opus-latest";
+    ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-4-6";
+    ANTHROPIC_DEFAULT_HAIKU_MODEL="claude-haiku-4-5";
+    CLAUDE_CODE_SUBAGENT_MODEL="claude-sonnet-4-6";
+    CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="0";
+  };
 
   home.enableNixpkgsReleaseCheck = false;
 

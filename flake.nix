@@ -41,6 +41,9 @@
 
           home-manager.nixosModules.home-manager
           {
+            home-manager.sharedModules = [
+              sops-nix.homeManagerModules.sops
+            ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
