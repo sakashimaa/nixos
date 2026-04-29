@@ -69,6 +69,7 @@
       jetbrains.datagrip
       hurl
       openssl
+      ungoogled-chromium
     ])
     ++ [
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
