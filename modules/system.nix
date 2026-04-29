@@ -1,5 +1,8 @@
 { pkgs, niri, ... }:
 {
+  virtualisation.docker.enable = true;
+  users.users.yoko.extraGroups = [ "docker" ];
+
   security.pam.services.hyprlock = { };
 
   environment.sessionVariables = {
