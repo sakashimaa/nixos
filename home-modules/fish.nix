@@ -1,9 +1,11 @@
 { ... }:
 {
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
 
-  home.file.".config/fish" = {
-    source = ../dotfiles/fish;
-    recursive = true;
+    interactiveShellInit = builtins.readFile ../dotfiles/fish/config.fish;
   };
+
+  xdg.configFile."fish/conf.d/nvm.fish".source = ../dotfiles/fish/conf.d/nvm.fish;
+  xdg.configFile."fish/conf.d/rustup.fish".source = ../dotfiles/fish/conf.d/rustup.fish;
 }
