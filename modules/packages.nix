@@ -67,7 +67,7 @@
       lazygit
       nautilus
       jetbrains.datagrip
-      postman
+      hurl
     ])
     ++ [
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
