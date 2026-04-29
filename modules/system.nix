@@ -2,6 +2,17 @@
 {
   security.pam.services.hyprlock = { };
 
+  environment.sessionVariables = {
+ANTHROPIC_AUTH_TOKEN="sk-fp-e890e105-f5a0-433b-b370-2df59cbf8a87";
+ANTHROPIC_BASE_URL="http://185.193.127.242/anthropic";
+ANTHROPIC_MODEL="claude-opus-latest";
+ANTHROPIC_DEFAULT_OPUS_MODEL="claude-opus-latest";
+ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-4-6";
+ANTHROPIC_DEFAULT_HAIKU_MODEL="claude-haiku-4-5";
+CLAUDE_CODE_SUBAGENT_MODEL="claude-sonnet-4-6";
+CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC= "0";
+  };
+
   nixpkgs.overlays = [
     niri.overlays.niri
   ];
