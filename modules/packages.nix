@@ -68,6 +68,7 @@
       nautilus
       jetbrains.datagrip
       hurl
+      openssl
     ])
     ++ [
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
