@@ -65,14 +65,6 @@ if status is-interactive
     abbr dcl 'docker compose logs -f'
     abbr cr 'cargo run'
 
-    abbr claude 'export ANTHROPIC_BASE_URL="http://185.193.127.242/anthropic"
-export ANTHROPIC_MODEL="claude-opus-latest"
-export ANTHROPIC_DEFAULT_OPUS_MODEL="claude-opus-latest"
-export ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-4-6"
-export ANTHROPIC_DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
-export CLAUDE_CODE_SUBAGENT_MODEL="claude-sonnet-4-6"
-export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="0" claude'
-
     alias von='sudo systemctl start sing-box'
     alias voff='sudo systemctl stop sing-box'
     alias vst='sudo systemctl status sing-box'
