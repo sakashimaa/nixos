@@ -101,7 +101,7 @@
               reality = {
                 enabled = true;
                 public_key = "kDYojkUKiFusSWJSNk9JCkHUfv7CUqjRXlC_9J5s4Q4";
-                short_id = "fe";
+                short_id = "b6a4829c79e0";
               };
             };
           }
