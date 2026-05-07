@@ -1,6 +1,7 @@
 {
   pkgs,
   noctalia,
+  zen-browser,
   ...
 }:
 {
@@ -72,6 +73,7 @@
       ungoogled-chromium
     ])
     ++ [
+      zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 }

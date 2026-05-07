@@ -14,6 +14,10 @@
     };
     niri.url = "github:sodiboo/niri-flake";
     claude-code.url = "github:sadjow/claude-code-nix";
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -24,12 +28,13 @@
       noctalia,
       claude-code,
       home-manager,
+      zen-browser,
       ...
     }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit noctalia niri; };
+        specialArgs = { inherit zen-browser noctalia niri; };
         modules = [
           {
             nixpkgs.overlays = [ claude-code.overlays.default ];
