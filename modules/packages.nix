@@ -2,6 +2,8 @@
   pkgs,
   noctalia,
   zen-browser,
+  codex-desktop-linux,
+  codex-cli-nix,
   ...
 }:
 {
@@ -75,5 +77,7 @@
     ++ [
       zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+      # codex-desktop-linux.packages.${pkgs.stdenv.hostPlatform.system}.default
+      codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 }

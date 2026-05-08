@@ -18,6 +18,8 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    codex-desktop-linux.url = "github:ilysenko/codex-desktop-linux";
+    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };
 
   outputs =
@@ -29,12 +31,14 @@
       claude-code,
       home-manager,
       zen-browser,
+      codex-desktop-linux,
+      codex-cli-nix,
       ...
     }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit zen-browser noctalia niri; };
+        specialArgs = { inherit codex-cli-nix codex-desktop-linux zen-browser noctalia niri; };
         modules = [
           {
             nixpkgs.overlays = [ claude-code.overlays.default ];
