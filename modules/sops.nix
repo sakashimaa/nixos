@@ -67,22 +67,9 @@
             type = "selector";
             tag = "proxy";
             outbounds = [
-              "auto"
               "vless-reality"
-              "hy2"
             ];
             default = "vless-reality";
-          }
-          {
-            type = "urltest";
-            tag = "auto";
-            outbounds = [
-              "vless-reality"
-              "hy2"
-            ];
-            url = "https://www.gstatic.com/generate_204";
-            interval = "5m";
-            tolerance = 50;
           }
           {
             type = "vless";
