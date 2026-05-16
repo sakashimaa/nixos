@@ -56,7 +56,7 @@
             type = "tun";
             tag = "tun-in";
             mtu = 1280;
-            address = [ "172.19.0.1/30" ];
+            address = [ "64.188.68.6/30" ];
             auto_route = true;
             strict_route = true;
             stack = "system";
@@ -87,21 +87,21 @@
           {
             type = "vless";
             tag = "vless-reality";
-            server = "195.63.137.98";
+            server = "64.188.68.6";
             server_port = 443;
-            uuid = "63468d49-5aac-41b0-9eea-e1e7ccc7f8ee";
+            uuid = "cbc61b4a-e71c-42ba-bffe-3456f6edb5f6";
             flow = "xtls-rprx-vision";
             tls = {
               enabled = true;
-              server_name = "gateway.icloud.com";
+              server_name = "thehealthclinicstockholm.com";
               utls = {
                 enabled = true;
                 fingerprint = "chrome";
               };
               reality = {
                 enabled = true;
-                public_key = "kDYojkUKiFusSWJSNk9JCkHUfv7CUqjRXlC_9J5s4Q4";
-                short_id = "b6a4829c79e0";
+                public_key = "c6jXl9GCGUp9uX74JVpNuKatHmSe3I_79IEHyPHwtTA";
+                short_id = "14320e710d0c340b";
               };
             };
           }
